@@ -1,11 +1,11 @@
 import './App.css'
-import ArticlesPage from './Components/ArticlesPage'
+import ArticlesTable from './Components/ArticlesTable';
 
 function App() {
   return (
     <>
-        <ArticlesPage />
-      </>
+      <ArticlesTable />
+    </>
   )
 }
 

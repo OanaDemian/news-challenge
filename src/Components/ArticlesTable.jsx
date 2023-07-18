@@ -1,9 +1,10 @@
-import ArticleHeadline from "./ArticleHeadline.jsx";
+import ArticleRow from "./ArticleRow.jsx";
+import mockArticlesData from '../../mockNewsData.json';
 import './ArticlesTable.css';
   
-const ArticlesTable = props => {
+const ArticlesTable = () => {
 
-  const  articles  = props.mockArticlesData.mockApiResponse.response.results;
+  const articles = mockArticlesData.mockApiResponse.response.results;
 
   
     // let lastArticle = null;
@@ -13,19 +14,28 @@ const ArticlesTable = props => {
     //   articleRows.push(<Article key={article.id} article={article} headline={article.fields.headline} image={article.fields.thumbnail} />);
     //     lastArticle = article.id;
     // });
-      return (
-        <table className="articles-table">
-          <thead>
-          <tr>
-              <th className="daily-headlines">Today's Headlines</th>
-          </tr>
-          </thead>
-          <tbody>
-            {articles.map(article => 
-              <ArticleHeadline key={article.id} article={article} headline={article.fields.headline} imageSrc={article.fields.thumbnail} />
-            )}
-          </tbody>
-        </table>
+  
+  const viewArticle = articles.map((article) => (
+    {
+      headline: article.fields.headline,
+      imageSrc: article.fields.thumbnail,
+      id: article.id
+    }
+  ))
+  
+  return (
+    <table className="articles-table">
+      <thead>
+      <tr>
+          <th className="daily-headlines">Today's Headlines</th>
+      </tr>
+      </thead>
+      <tbody>
+        {viewArticle.map(article => 
+          <ArticleRow key={article.id} article={article} />
+        )}
+      </tbody>
+    </table>
     );
 };
 
