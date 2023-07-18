@@ -5,15 +5,6 @@ import './ArticlesTable.css';
 const ArticlesTable = () => {
 
   const articles = mockArticlesData.mockApiResponse.response.results;
-
-  
-    // let lastArticle = null;
-    // let articleRows = [];
-
-    // articles.forEach(article => {
-    //   articleRows.push(<Article key={article.id} article={article} headline={article.fields.headline} image={article.fields.thumbnail} />);
-    //     lastArticle = article.id;
-    // });
   
   const viewArticle = articles.map((article) => (
     {
@@ -26,9 +17,9 @@ const ArticlesTable = () => {
   return (
     <table className="articles-table">
       <thead>
-      <tr>
-          <th className="daily-headlines">Today's Headlines</th>
-      </tr>
+        <tr>
+          <th className="daily-headlines">Today&#39;s Headlines</th>
+        </tr>
       </thead>
       <tbody>
         {viewArticle.map(article => 
@@ -38,6 +29,5 @@ const ArticlesTable = () => {
     </table>
     );
 };
-
 
 export default ArticlesTable;
