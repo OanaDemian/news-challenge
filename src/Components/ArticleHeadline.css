@@ -1,0 +1,17 @@
+.article-container {
+  display: flex;
+  flex-direction: column  ;
+  background-color: rgb(237, 237, 237);
+  margin-bottom: 20px;
+  border-top: solid rgb(199, 0, 0) 1px;
+  padding: 0px;
+}
+
+.article-headline {
+  color: rgb(18, 18, 18);
+  font-family: GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 500;
+    --source-text-decoration-thickness: 3px;
+}

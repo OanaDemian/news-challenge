@@ -1,4 +1,5 @@
 import ArticleHeadline from "./ArticleHeadline.jsx";
+import './ArticlesTable.css';
   
 const ArticlesTable = props => {
 
@@ -13,10 +14,10 @@ const ArticlesTable = props => {
     //     lastArticle = article.id;
     // });
       return (
-        <table>
+        <table className="articles-table">
           <thead>
           <tr>
-              <th>Today's Headlines</th>
+              <th className="daily-headlines">Today's Headlines</th>
           </tr>
           </thead>
           <tbody>

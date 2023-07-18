@@ -1,0 +1,18 @@
+.daily-headlines {   
+  display: flex;
+  font-family: GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 700;
+  --source-text-decoration-thickness: 3px;
+  color: #121212;
+  padding-bottom: 20px;
+  padding-top: 6px;
+  overflow-wrap: break-word;
+  align-items: flex-start;
+  }
+
+  .articles-table {
+    border: solid rgb(220, 220, 220) 1px;
+    padding: 20px;
+  }

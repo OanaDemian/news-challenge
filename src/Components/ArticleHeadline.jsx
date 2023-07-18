@@ -1,9 +1,10 @@
-const ArticleHeadline = ({article, headline, imageSrc}) => {
+import './ArticleHeadline.css';
+const ArticleHeadline = ({ article, headline, imageSrc }) => {
   return (
     <tr>
-      <td>
-        <img src={imageSrc} height="100" width="100" />
-        {headline}
+      <td className="article-container">
+        <img src={imageSrc} />
+        <h2 className="article-headline">{headline}</h2>
       </td>
     </tr>
   );
