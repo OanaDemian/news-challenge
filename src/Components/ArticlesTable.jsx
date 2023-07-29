@@ -1,18 +1,27 @@
 import ArticleRow from "./ArticleRow.jsx";
-import mockArticlesData from '../../mockNewsData.json';
+// import mockArticlesData from '../../mockNewsData.json';
 import './ArticlesTable.css';
-  
-const ArticlesTable = () => {
+import { getNews } from '../utils/getNews.js';
+import { useEffect } from "react";
+import { useState } from "react";
 
-  const articles = mockArticlesData.mockApiResponse.response.results;
-  
-  const viewArticle = articles.map((article) => (
-    {
-      headline: article.fields.headline,
-      imageSrc: article.fields.thumbnail,
-      id: article.id
-    }
-  ))
+const ArticlesTable = () => {
+  const [articles, setArticles] = useState(['... loading']);
+
+  useEffect(() => {
+    getArticlesData();
+  }, []);
+
+  const getArticlesData = () => {
+    const articlesData = getNews().then(response => {
+      console.log(response.articles)
+      if (response.error === undefined) {
+        setArticles(response.articles)
+      } else {
+        setArticles(response.error)
+      }
+    })
+  }
   
   return (
     <table className="articles-table">
@@ -22,7 +31,7 @@ const ArticlesTable = () => {
         </tr>
       </thead>
       <tbody>
-        {viewArticle.map(article => 
+        {articles.map(article => 
           <ArticleRow key={article.id} article={article} />
         )}
       </tbody>
