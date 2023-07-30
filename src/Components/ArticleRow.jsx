@@ -1,14 +1,23 @@
 import PropTypes from 'prop-types'; 
+import { useState } from 'react';
 import './ArticleRow.css';
 
 const ArticleRow = ({ article }) => {
+
+  const [expanded, setExpanded] = useState(false);
+
+  const handleCLick = () => {
+    setExpanded(!expanded);
+  }
+  
   return (
-    <tr>
+    <tr onClick={() => handleCLick()}>
       <td className="article-container">
         <img src={article.imageSrc} />
-        <a href={article.url}>
           <h2 className="article-headline">{article.headline}</h2>
-        </a>
+        {expanded && <a href={article.url}>
+          <p className="article-summary"> {article.summary}</p>
+        </a>}
       </td>
     </tr>
   );
@@ -19,6 +28,7 @@ ArticleRow.propTypes = {
     headline: PropTypes.string.isRequired,
     imageSrc: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     id: PropTypes.string
   })
 }

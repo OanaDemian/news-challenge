@@ -11,6 +11,7 @@ export const getNews = async () => {
       headline: article.fields.headline,
       imageSrc: article.fields.thumbnail,
       url: article.webUrl,
+      summary: article.fields.bodyText,
       id: article.id
     }
   ))

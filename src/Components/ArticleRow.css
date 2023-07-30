@@ -15,3 +15,15 @@
     font-weight: 500;
     --source-text-decoration-thickness: 3px;
 }
+
+.article-summary {
+  color: rgb(18, 18, 18);
+  font-family: GuardianTextSans, "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  font-weight: 400;
+  --source-text-decoration-thickness: 2px;
+  padding-bottom: 24px;
+  text-align: left;
+  margin: 15px;
+}
