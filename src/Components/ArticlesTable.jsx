@@ -6,19 +6,26 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const ArticlesTable = () => {
-  const [articles, setArticles] = useState(['... loading']);
+  const [articles, setArticles] = useState([{
+    headline: "Loading ...",
+    imageSrc: '',
+    id: '0'
+  }]);
 
   useEffect(() => {
     getArticlesData();
   }, []);
 
   const getArticlesData = () => {
-    const articlesData = getNews().then(response => {
-      console.log(response.articles)
+    getNews().then(response => {
       if (response.error === undefined) {
         setArticles(response.articles)
       } else {
-        setArticles(response.error)
+        setArticles([{
+    headline: "Oops something went wrong...",
+    imageSrc: '',
+    id: '0'
+  }])
       }
     })
   }
