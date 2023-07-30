@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Api key
+.env 
+
+#Coverage
+coverage
