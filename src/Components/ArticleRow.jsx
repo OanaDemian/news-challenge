@@ -1,5 +1,5 @@
-import './ArticleRow.css';
 import PropTypes from 'prop-types'; 
+import './ArticleRow.css';
 
 const ArticleRow = ({ article }) => {
   return (
