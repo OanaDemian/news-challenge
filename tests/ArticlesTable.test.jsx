@@ -16,13 +16,11 @@ describe('ArticlesTable tests', () => {
             imageSrc: '',
             id: '2'
         }]}));
-        // 1. Render the component under test with some articles
         await act(() => {
             render(<ArticlesTable />);
         });
         // Act
         // Assert
-        // 2. Assert the correct number of rows are rendered in the table
         const articlesRow1 = screen.getByText(/Article 1/i);
         const articlesRow2 = screen.getByText(/Article 2/i);
         expect(articlesRow1).toBeInTheDocument();
@@ -38,5 +36,18 @@ describe('ArticlesTable tests', () => {
        // Assert 
         const noArticlesRow = screen.getByText(/Loading .../i);
         expect(noArticlesRow).toBeInTheDocument();
+    });
+
+
+    it('shows an error if one is returned', async () => {
+      // Arrange      
+        getNews.mockReturnValue(Promise.resolve({ error: 'This is an error'}));
+        await act(() => {
+            render(<ArticlesTable />);
+        });
+        // Act
+        // Assert
+        const articlesRow1 = screen.getByText(/This is an error/i);
+        expect(articlesRow1).toBeInTheDocument();
     });
 });

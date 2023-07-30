@@ -1,9 +1,8 @@
 import ArticleRow from "./ArticleRow.jsx";
-// import mockArticlesData from '../../mockNewsData.json';
-import './ArticlesTable.css';
 import { getNews } from '../utils/getNews.js';
 import { useEffect } from "react";
 import { useState } from "react";
+import './ArticlesTable.css';
 
 const ArticlesTable = () => {
   const [articles, setArticles] = useState([{
@@ -22,7 +21,7 @@ const ArticlesTable = () => {
         setArticles(response.articles)
       } else {
         setArticles([{
-    headline: "Oops something went wrong...",
+    headline: response.error,
     imageSrc: '',
     id: '0'
   }])
