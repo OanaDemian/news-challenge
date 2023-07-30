@@ -34,11 +34,13 @@ describe('getNews tests', () => {
                     "headline": "Victorian MPs urged to implement integrity reforms before state election after scathing Ibac findings",
                     "id": "australia-news/2022/jul/20/daniel-andrews-apologises-for-disgraceful-behaviour-of-labor-mps-after-scathing-ibac-findings",
                     "imageSrc": "https://media.guim.co.uk/526802e87e837142de4c0c854e8a95a7740dd197/0_65_6078_3647/500.jpg",
+                    "url": "https://www.theguardian.com/australia-news/2022/jul/20/daniel-andrews-apologises-for-disgraceful-behaviour-of-labor-mps-after-scathing-ibac-findings",
                 },
                 {
                     "headline": "PMQs live: Boris Johnson faces Keir Starmer for last time as Tory MPs set to choose final two leadership candidates",
                     "id": "politics/live/2022/jul/20/tory-leadership-race-live-sunak-mordaunt-truss-latest-uk-politics",
                     "imageSrc": "https://media.guim.co.uk/27c027752091e28dcb8133b0d5e6cb9af7fd4e8e/60_0_1800_1080/500.jpg",
+                    "url": "https://www.theguardian.com/politics/live/2022/jul/20/tory-leadership-race-live-sunak-mordaunt-truss-latest-uk-politics",
                 },
             ]
         });
