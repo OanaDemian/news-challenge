@@ -11,7 +11,7 @@ const ArticleRow = ({ article }) => {
   }
   
   return (
-    <tr onClick={() => handleCLick()}>
+    <tr role='click' onClick={() => handleCLick()}>
       <td className="article-container">
         <img src={article.imageSrc} />
           <h2 className="article-headline">{article.headline}</h2>

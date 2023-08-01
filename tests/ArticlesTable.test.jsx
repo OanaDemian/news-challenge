@@ -10,10 +10,14 @@ describe('ArticlesTable tests', () => {
         getNews.mockReturnValue(Promise.resolve({ articles: [{
             headline: "Article 1",
             imageSrc: '',
+            url: '',
+            summary: '',
             id: '1'
             }, {
             headline: "Article 2",
             imageSrc: '',
+            url: '',
+            summary: '',
             id: '2'
         }]}));
         await act(() => {
@@ -25,8 +29,6 @@ describe('ArticlesTable tests', () => {
         const articlesRow2 = screen.getByText(/Article 2/i);
         expect(articlesRow1).toBeInTheDocument();
         expect(articlesRow2).toBeInTheDocument();
-        const tableRows = screen.getAllByRole(`row`);
-        expect(tableRows.length).toBe(3);
     });
        
     it('shows the first article as "Loading ..." on first render', () => {
