@@ -2,17 +2,19 @@
 
 ### Task
 
-You'll test-drive a single page application in React that send requests to the Guardian API to get Headline and Article data and display them. 
+News is a single page application built in React that sends requests to the Guardian API to get Headline and Article data and display them. 
 
-### Serving your app
+Users are able to:
 
-You'll use React's toolchain to take care of serving your HTML, CSS and JavaScript files.  
+- View today's **headlines** in one place;
+- View the relevant **article image** for each news article when browsing the headlines;
+- View the **article's summary** which expands when the user clicks on the article's image or headline;
+- View the **original article** when the user clicks on the article's expanded summary;
+- View the **optimal layout** for the interface depending on their device's screen size.
 
-## User Stories
+### User Stories
 
-Some of these stories will need decomposing if they seem too large.
-
-### Standard
+#### Standard
 ```
 As a busy politician
 So I know what the big stories of the day are
@@ -25,7 +27,7 @@ So that I have something nice to look at
 I can see a relevant picture to illustrate each news article when I browse headlines
 ```
 
-### Extended
+#### Extended
 
 ```
 As a busy politician
@@ -45,102 +47,90 @@ Just in case my laptop breaks
 I can read the site comfortably on my phone
 ```
 
-<!-- ```
-As a busy politician
-To make my news reading more fun
-I can see whizzy animations in the app
-``` -->
+### Mockups
 
-## Mockups
-
-### Headlines page
+#### Headlines page
 
 ![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
 
-### Article summary page
+#### Article summary page
 
 ![Article page mockup](/images/news-summary-project-article-page-mockup.png)
 
-## API
+### Links
+- See the site: https://news-0uxg.onrender.com/
+- See the code: https://github.com/OanaDemian/news-summary-challenge-df
 
-### API request rate limits and stubbing
+### Screenshots
 
-The Guardian and Aylien text summarisation APIs are severely rate-limited.
+### Built with
 
-**Please stub your tests so you don't exceed the daily limit.  Otherwise, all requests will be rejected and your app will stop working!**
+Here's an overview of the technologies used to build this template application.
 
-### Guardian API example
+- [React](https://reactjs.org/) is a tool that is used to build engaging front ends. 
+- [Axios](https://axios-http.com/) is a promise-based HTTP Client for node.js and the browser. 
+- [Vite](https://vitejs.dev/), a platform-agnostic frontend tool for building web applications quickly.
+- [ESLint](https://eslint.org) for linting.
+- CSS for styling.
 
-**Please stub your tests to avoid exceeding the API rate limit**
+### Getting Started 
+1. Fork this repository and then run the following command on your local environment:
 
-If you wanted to get the content of an article from the Guardian API, this is the cURL request you might make.  Notice how it has a query parameter for `api-key`.
-
-```sh
-# Search endpoint
-curl "https://content.guardianapis.com/search?q=coronavirus&show-fields=body&api-key=API_KEY"
+```bash
+$ git clone https://github.com/<YOUR GITHUB USERNAME>//news-summary-challenge-df.git && cd /news-summary-challenge-df
 ```
-```sh
-# Single Item endpoint
-curl "https://content.guardianapis.com/world/2021/mar/22/link-between-diabetes-and-coronavirus-infections?show-fields=body&api-key=API_KEY"
+
+2. Install Node.js dependencies:
+
+```bash
+$ cd news-summary-challenge-df
+$ npm install
 ```
 
-#### Example request data
+3. Install an ESLint plugin for your editor. For example: [`ESLint`](https://eslint.org/).
 
-[Mock Data](./mockNewsData.json) - contains a request to the Guardian API with fields selected that will help you with the challenge.  The actual request made was to:
+4. Run de app locally
 
-https://content.guardianapis.com/search?order-by=newest&show-fields=byline%2Cthumbnail%2Cheadline%2CbodyText&api-key=INSERT_YOUR_KEY_HERE
-
-You will need to replace `INSERT_YOUR_KEY_HERE` with your own Guardian API key.  Use this data whilst developing, serving it from `json-server` - it will help on the request rate limit in the API.
-
-<!-- ### Aylien text summarisation API example
-
-**Please stub your tests to avoid exceeding the API rate limit**
-
-If you wanted to use the Aylien API to summarise an article by Bret Victor, this is the cURL request you might make.  Notice how it has headers to authenticate with the Aylien API.
-
+```bash
+$ npm run dev
 ```
-curl "https://api.aylien.com/api/v1/summarize?url=http://worrydream.com/MediaForThinkingTheUnthinkable/note.html" \
-  -H "X-AYLIEN-TextAPI-Application-ID: APPLICATION_ID" \
-  -H "X-AYLIEN-TextAPI-Application-Key: SECRET_APPLICATION_KEY"
-```
--->
-
-## Resources
-
-* [Guardian newspaper API homepage](http://open-platform.theguardian.com/documentation/)
-<!-- * [Aylien text summary API docs](http://docs.aylien.com/docs/summarize) -->
-* cURL [man page](https://curl.haxx.se/docs/manpage.html)
-* [Hurl](https://www.hurl.it/), a web interface for sending HTTP requests
-
----
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [ http://localhost:5173/]( http://localhost:5173/) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+5. Testing 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm run test
+```
 
-### `npm run build`
+6. Test coverage:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ npm run coverage
+```
 
-The build is minified and the filenames include the hashes.\
+7. To lint you project run:
+
+```bash
+$ npm run lint
+```
+
+8. To fix linting issues run:
+
+```bash
+$ npm run lint:fix
+```
+9. To build the app for production to the `build` folder run:
+
+```bash
+$ npm run build
+```
+
+Builds the app for production to the `dist` folder.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
