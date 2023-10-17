@@ -51,9 +51,9 @@ I can read the site comfortably on my phone
 
 #### Headlines page
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup-and-component-hierarchy)
+![Headlines page mockup](/images/news-summary-project-headlines-page-mockup-and-component-hierarchy.png)
 
-#### Article summary page
+#### Expanded article
 
 ![Article mockup](/images/news-summary-project-article-mockup.png)
 
