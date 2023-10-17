@@ -2,7 +2,7 @@
 
 ### Task
 
-News is a single page application built in React that sends requests to the Guardian API to get Headline and Article data and display them. 
+News is a single page application built in React that sends requests to the Guardian API to get Headline and Article data and display them to a busy user. 
 
 Users are able to:
 
@@ -47,21 +47,24 @@ Just in case my laptop breaks
 I can read the site comfortably on my phone
 ```
 
-### Mockups
+### Mockups and Component Hierarchy
 
 #### Headlines page
 
-![Headlines page mockup](/images/news-summary-project-headlines-page-mockup.png)
+![Headlines page mockup](/images/news-summary-project-headlines-page-mockup-and-component-hierarchy)
 
 #### Article summary page
 
-![Article page mockup](/images/news-summary-project-article-page-mockup.png)
+![Article mockup](/images/news-summary-project-article-mockup.png)
 
 ### Links
 - See the site: https://news-0uxg.onrender.com/
 - See the code: https://github.com/OanaDemian/news-summary-challenge-df
 
 ### Screenshots
+![Headlines page screenshot](/src/assets/news-summary-project-headlines-page.png)
+![Article screenshot](/src/assets/news-article-headline-image.png)
+![Expanded article screenshot](/src/assets/news-summary-project-expanded-summary.png)
 
 ### Built with
 
@@ -89,8 +92,17 @@ $ npm install
 
 3. Install an ESLint plugin for your editor. For example: [`ESLint`](https://eslint.org/).
 
-4. Run de app locally
+4. Set up the environmental parameters:
 
+```bash
+$ touch .env
+$ echo VITE_APP_API_KEY = 'your_Guardian_API_key' > .env
+```
+
+Create a _.gitignore_ file and add the .env file. This tells Git ignore the .env file and its contents when a Git commit is made.
+
+4. Run de app locally
+In the root of your folder, create a .env file which contains the 
 ```bash
 $ npm run dev
 ```
@@ -113,18 +125,18 @@ $ npm run test
 $ npm run coverage
 ```
 
-7. To lint you project run:
+7. Lint you project:
 
 ```bash
 $ npm run lint
 ```
 
-8. To fix linting issues run:
+8. Fix linting issues:
 
 ```bash
 $ npm run lint:fix
 ```
-9. To build the app for production to the `build` folder run:
+9. Build the app for production to the `dist` folder:
 
 ```bash
 $ npm run build
